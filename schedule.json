@@ -1,0 +1,53 @@
+{
+    "schedule": [
+      {
+        "class": "English 4",
+        "teacher": "Ms. Campisano",
+        "room": "A130",
+        "period": 1,
+        "days": ["A", "B", "C", "E", "F"]
+      },
+      {
+        "class": "H. NJIT IS219 Adv. Website Development",
+        "teacher": "Mr. Kilgore",
+        "room": "B111",
+        "period": 2,
+        "days": ["A", "B", "D", "E", "F"]
+      },
+      {
+        "class": "Physical Ed 12",
+        "teacher": "Mr. Frankel",
+        "room": "GYM",
+        "period": 3,
+        "days": ["A", "C", "D", "E", "G"]
+      },
+      {
+        "class": "Algebra 2 Applications & Analysis",
+        "teacher": "Mr. Sessa",
+        "room": "E202",
+        "period": 4,
+        "days": ["B", "C", "D", "F", "G"]
+      },
+      {
+        "class": "Applied Art 1",
+        "teacher": "Mrs. Casella",
+        "room": "D101",
+        "period": 5,
+        "days": ["A", "B", "D", "E", "G"]
+      },
+      {
+        "class": "Intro to Woodworking",
+        "teacher": "Mrs. Ransom",
+        "room": "B109",
+        "period": 6,
+        "days": ["A", "C", "D", "F", "G"]
+      },
+      {
+        "class": "Financial Literacy",
+        "teacher": "Mr. Morgan",
+        "room": "A132",
+        "period": 7,
+        "days": ["B", "C", "E", "F", "G"]
+      }
+    ]
+  }
