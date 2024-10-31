@@ -1,4 +1,4 @@
-$(document).ready(){
+$(document).ready(){function {
   const scheduleUrl = 'https://api.npoint.io/5e0bbb5d32a86ba8f280'
 
 
@@ -19,23 +19,39 @@ $('#submitDay').on('click', function() {
     alert('Please enter a valid day (A-G)')
     return
   }
-$.ajax(){
-  url = 'https://api.npoint.io/5e0bbb5d32a86ba8f280'
-  const aDayClasses = getClassesForDay('A');
-console.log(aDayClasses);
-const bDayClasses = getClassesForDay('B');
-console.log(bDayClasses);
-const cDayClasses = getClassesForDay('C');
-console.log(cDayClasses);
-const dDayClasses = getClassesForDay('D');
-console.log(dDayClasses);
-const eDayClasses = getClassesForDay('E');
-console.log(eDayClasses);
-const fDayClasses = getClassesForDay('F');
-console.log(fDayClasses);
-const gDayClasses = getClassesForDay('G');
-console.log(gDayClasses);
-}
+  const getByPeriod = (period) => schedule.filter(item => item.period === period)[0];
+  if (letter !== "G") {
+    for (let i = 0; i < 3; i++) {
+      let rotatedIndex = (i + letterIndex) % 4; // keeps numbers wrapping around 1-4
+      build.push(getByPeriod(rotatedIndex + 1));
+    }
+  } else {
+    build = [getByPeriod(3), getByPeriod(4), getByPeriod(7)];
+  }
+  build.push(getByPeriod(0)); // Always add schedule[0] (lunch) in the middle
+  if (letter !== "G") {
+    for (let ii = 0; ii < 2; ii++) {
+      let latterRotatedIndex = (ii + letterIndex) % 3; // Rotates through [0, 1, 2]
+      let periodIndex = [5, 6, 7][latterRotatedIndex]; // Map indices to periods [5, 6, 7]
+      build.push(getByPeriod(periodIndex));
+    }        
+  } else {
+    build.push(getByPeriod(5));
+    build.push(getByPeriod(6));
+  }
+  tableBody.find(".remove").remove();
+  // Loop through the schedule array and create table rows
+  build.forEach(item => {
+      let row = `
+          <tr class="remove">
+              <td>${item.period}</td>
+              <td>${item.name || "N/A"}</td>
+              <td>${item.teacher || "N/A"}</td>
+              <td>${item.room || "N/A"}</td>
+          </tr>
+      `;
+      tableBody.append(row);
+  });
 }
 )
-}
+}}
